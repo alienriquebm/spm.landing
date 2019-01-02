@@ -35,7 +35,7 @@ body {
       z-index: 1;
       transition: transform 0.5s ease;
       opacity: 0.5;
-      animation: moveClouds1 70s linear infinite;
+      animation: moveClouds 70s linear infinite;
 
       img {
         width: 300px;
@@ -48,10 +48,12 @@ body {
       z-index: 1;
       transition: transform 0.5s ease;
       opacity: 0.5;
-      animation: moveClouds2 100s linear infinite;
+      animation: moveClouds 100s linear infinite;
+      overflow: hidden;
 
       img {
         width: 300px;
+        overflow: hidden;
       }
     }
 
@@ -61,7 +63,7 @@ body {
       z-index: 1;
       transition: transform 0.5s ease;
       opacity: 0.5;
-      animation: moveClouds3 160s linear infinite;
+      animation: moveClouds 160s linear infinite;
 
       img {
         width: 300px;
@@ -74,7 +76,7 @@ body {
       z-index: 1;
       transition: transform 0.5s ease;
       opacity: 0.5;
-      animation: moveClouds4 160s linear infinite;
+      animation: moveClouds 160s linear infinite;
     }
 
     &-mountain {
@@ -104,42 +106,12 @@ body {
 
 // Animation
 
-@keyframes moveClouds1 {
+@keyframes moveClouds {
   0% {
-    margin-left: 1000px;
+    transform: translateX(calc(100vw + 100px));
   }
 
   100% {
-    margin-left: -1000px;
-  }
-}
-
-@keyframes moveClouds2 {
-  0% {
-    margin-left: 500px;
-  }
-
-  100% {
-    margin-left: -500px;
-  }
-}
-
-@keyframes moveClouds3 {
-  0% {
-    margin-left: 1500px;
-  }
-
-  100% {
-    margin-left: -1500px;
-  }
-}
-
-@keyframes moveClouds4 {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-1000px);
+    transform: translateX(calc(-100vw + 100px));
   }
 }
