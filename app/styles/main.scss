@@ -2,55 +2,144 @@ body {
   margin: 0px;
   padding: 0px;
   background: #eaf6fd;
+  overflow-x: hidden;
+
+  & .main {
+    height: 100vh;
+    width: 100%;
+
+    &-text {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      top: 30px;
+      color: #8b8783;
+    }
+
+    &-logo {
+      position: absolute;
+      height: 250px;
+      width: 100%;
+      top: calc((100vh / 2) - 250px);
+      z-index: -1;
+      transition: transform 0.1s ease;
+
+      & img {
+        object-fit: contain;
+      }
+    }
+
+    &-clouds1 {
+      position: absolute;
+      bottom: 135px;
+      z-index: 1;
+      transition: transform 0.5s ease;
+      opacity: 0.5;
+      animation: moveClouds1 70s linear infinite;
+
+      img {
+        width: 300px;
+      }
+    }
+
+    &-clouds2 {
+      position: absolute;
+      bottom: 60px;
+      z-index: 1;
+      transition: transform 0.5s ease;
+      opacity: 0.5;
+      animation: moveClouds2 100s linear infinite;
+
+      img {
+        width: 300px;
+      }
+    }
+
+    &-clouds3 {
+      position: absolute;
+      bottom: 120px;
+      z-index: 1;
+      transition: transform 0.5s ease;
+      opacity: 0.5;
+      animation: moveClouds3 160s linear infinite;
+
+      img {
+        width: 300px;
+      }
+    }
+
+    &-clouds4 {
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      transition: transform 0.5s ease;
+      opacity: 0.5;
+      animation: moveClouds4 160s linear infinite;
+    }
+
+    &-mountain {
+      position: absolute;
+      bottom: -5px;
+
+      & img {
+        object-fit: contain;
+      }
+    }
+  }
+
+  & .content {
+    background: #fff;
+    height: 1000px;
+  }
+
+  & .navbar {
+    width: 100%;
+  }
 }
 
 * {
   box-sizing: border-box;
 }
 
-.main {
-  height: 100vh;
-  width: 100%;
 
-  &-logo {
-    position: absolute;
-    height: 250px;
-    width: 100%;
-    top: calc((100vh / 2) - 250px);
-    z-index: -1;
-    transition: transform 0.1s ease;
+// Animation
 
-    & img {
-      object-fit: contain;
-    }
+@keyframes moveClouds1 {
+  0% {
+    margin-left: 1000px;
   }
 
-  &-clouds1 {
-    position: absolute;
-    bottom: -50px;
-    z-index: 1;
-    transition: transform 0.5s ease;
-    opacity: 0.5;
-  }
-  &-clouds2 {
-    position: absolute;
-    bottom: 0px;
-    z-index: 1;
-    transition: transform 0.5s ease;
-    opacity: 0.5;
-  }
-
-  &-mountain {
-    position: absolute;
-    bottom: -5px;
-
-    & img {
-      object-fit: contain;
-    }
+  100% {
+    margin-left: -1000px;
   }
 }
 
-.content {
-  background: #fff;
-  height: 1000px;
+@keyframes moveClouds2 {
+  0% {
+    margin-left: 500px;
+  }
+
+  100% {
+    margin-left: -500px;
+  }
+}
+
+@keyframes moveClouds3 {
+  0% {
+    margin-left: 1500px;
+  }
+
+  100% {
+    margin-left: -1500px;
+  }
+}
+
+@keyframes moveClouds4 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-1000px);
+  }
 }
