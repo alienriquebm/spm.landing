@@ -17,6 +17,7 @@
       &-text {
         display: grid;
         justify-content: center;
+        color: $grayColor;
 
         &-firsttext {
           font-weight: bold;
@@ -51,6 +52,7 @@
         justify-content: center;
         &-firsttext {
           font-weight: bold;
+          color: $grayColor;
         }
 
         &-subtext {
@@ -64,7 +66,7 @@
 }
 
 .rounded-text {
-  background: $grayColor;
+  background: $greenColor;
   width: 20px;
   height: 20px;
   border-radius: 50%;
