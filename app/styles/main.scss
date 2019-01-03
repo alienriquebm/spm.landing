@@ -18,13 +18,13 @@ body {
 
     &-logo {
       position: absolute;
-      height: 250px;
       width: 100%;
-      top: calc((100vh / 2) - 250px);
+      top: calc((100vh / 2) - 200px);
       z-index: -1;
       transition: transform 0.1s ease;
 
       & img {
+        width: 300px;
         object-fit: contain;
       }
     }
@@ -114,4 +114,10 @@ body {
   100% {
     transform: translateX(calc(-100vw + 100px));
   }
+}
+
+
+// Overrides of Bootstrap
+.carousel-item {
+  text-align: center;
 }
