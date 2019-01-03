@@ -9,9 +9,11 @@ $(window).scroll(function execScroll() {
   if (scrollValue >= window.innerHeight) {
     $('.navbar').css('position', 'fixed');
     $('.navbar').css('top', 0);
+    $('.main-logo').hide();
   } else {
     $('.navbar').css('position', 'initial');
     $('.navbar').css('top', 'initial');
+    $('.main-logo').show();
   }
 });
 
