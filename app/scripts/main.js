@@ -1,5 +1,5 @@
 console.log('\'Allo \'Allo!');
-$(window).scroll(function () {
+$(window).scroll(function execScroll() {
   const scrollValue = $(this).scrollTop();
   $('.main-logo').css('transform', `translate(0px, ${scrollValue / 2}%`);
   $('.main-clouds1').css('transform', `translate(0px, -${scrollValue / 15}%`);
@@ -16,5 +16,5 @@ $(window).scroll(function () {
 });
 
 $('.carousel').carousel({
-  interval: 1000 * 7
+  interval: 1000 * 7,
 });
