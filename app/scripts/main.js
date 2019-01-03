@@ -13,4 +13,8 @@ $(window).scroll(function () {
     $('.navbar').css('position', 'initial');
     $('.navbar').css('top', 'initial');
   }
-})
+});
+
+$('.carousel').carousel({
+  interval: 1000 * 7
+});

@@ -19,12 +19,12 @@ body {
     &-logo {
       position: absolute;
       width: 100%;
-      top: calc((100vh / 2) - 200px);
+      top: calc((100vh / 2) - 225px);
       z-index: -1;
       transition: transform 0.1s ease;
 
       & img {
-        width: 300px;
+        width: 400px;
         object-fit: contain;
       }
     }
@@ -121,3 +121,4 @@ body {
 .carousel-item {
   text-align: center;
 }
+
