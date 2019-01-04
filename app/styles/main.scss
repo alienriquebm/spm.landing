@@ -142,9 +142,44 @@ body {
     }
   }
 
+  // Instagram
+
   #instagram {
     background: $grayColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & button {
+      margin-top: 30px;
+    }
+
+    & .btn-primary {
+      color: #ffffff !important;
+      background-color: #9cc346 !important;
+      border-color: transparent !important;
+
+      &:hover {
+        background-color: #8baa47 !important;
+      }
+    }
   }
+
+  .instagram-feed {
+    padding-top: 20px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 15px;
+
+    & img {
+      width: 100%;
+      border: 2px solid #5a5754;
+    }
+  }
+
+  // Separator
 
   .triangle-separator::before,
   .triangle-separator::after {
@@ -172,6 +207,23 @@ body {
     z-index: 10;
     background: inherit;
   }
+
+  // Loader
+  .loader {
+    &-white {
+      & path {
+        fill: white;
+      }
+    }
+
+    &-gray {
+      & path {
+        fill: $grayColor;
+      }
+    }
+  }
+
+  // Footer
 
   footer {
     padding: 10px;
