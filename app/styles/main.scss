@@ -1,6 +1,12 @@
 @import 'variables';
 @import 'steps';
 
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
 body {
   margin: 0px;
   padding: 0px;
@@ -88,6 +94,7 @@ body {
 
       & img {
         object-fit: contain;
+        width: 100vw;
       }
     }
   }
@@ -135,32 +142,75 @@ body {
     }
   }
 
+  #instagram {
+    background: $grayColor;
+  }
+
+  .triangle-separator::before,
+  .triangle-separator::after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translateX(-100%) rotate(45deg) translateY(-70%);
+  }
+
+  .triangle-separator.separator-white::before {
+    // top: -50px;
+    background: white;
+  }
+
+  .triangle-separator.separator-gray::before {
+    // top: -50px;
+    background: $grayColor;
+  }
+
+  .triangle-separator::after {
+    // bottom: -50px;
+    z-index: 10;
+    background: inherit;
+  }
+
+  footer {
+    padding: 10px;
+    background: $grayColor;
+    color: white;
+    text-align: center;
+    font-size: 0.7em;
+  }
+
+  // Animation
+
+  @keyframes moveClouds {
+    0% {
+      transform: translateX(calc(100vw + 100px));
+    }
+
+    100% {
+      transform: translateX(calc(-100vw + 100px));
+    }
+  }
+
+  #clouds {
+    background: white;
+
+    & path {
+      fill: #8b8783;
+    }
+  }
+
+  // Overrides of Bootstrap
+  .carousel-item {
+    text-align: center;
+  }
+
   & .navbar {
     width: 100%;
-    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    z-index: 1;
   }
-}
-
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-
-// Animation
-
-@keyframes moveClouds {
-  0% {
-    transform: translateX(calc(100vw + 100px));
-  }
-
-  100% {
-    transform: translateX(calc(-100vw + 100px));
-  }
-}
-
-
-// Overrides of Bootstrap
-.carousel-item {
-  text-align: center;
 }
