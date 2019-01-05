@@ -49,6 +49,11 @@ body {
       img {
         width: 300px;
       }
+
+      &.cloud-static {
+        bottom: 185px !important;
+        transition: transform 0.1s ease !important;
+      }
     }
 
     &-clouds2 {
@@ -64,6 +69,12 @@ body {
         width: 300px;
         overflow: hidden;
       }
+
+      &.cloud-static {
+        bottom: 160px !important;
+        left: 420px;
+        transition: transform 0.1s ease !important;
+      }
     }
 
     &-clouds3 {
@@ -77,6 +88,12 @@ body {
       img {
         width: 300px;
       }
+
+      &.cloud-static {
+        bottom: 100px !important;
+        right: -50px;
+        transition: transform 0.1s ease !important;
+      }
     }
 
     &-clouds4 {
@@ -86,6 +103,10 @@ body {
       transition: transform 0.5s ease;
       opacity: 0.5;
       animation: moveClouds 160s linear infinite;
+    }
+
+    .cloud-static {
+      animation: none !important;
     }
 
     &-mountain {
@@ -165,6 +186,9 @@ body {
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-rows: 70px 90px 1fr;
+        cursor: default;
+
+        &:hover {}
 
         &-title {
           text-align: center;
@@ -186,6 +210,7 @@ body {
         }
 
         &-description {
+          padding-top: 20px;
           font-size: 0.7em;
           color: $grayColor;
         }
