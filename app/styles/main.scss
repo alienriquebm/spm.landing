@@ -393,6 +393,15 @@ body {
       display: flex;
       color: $grayColor;
 
+      & i {
+        color: $greenColor;
+      }
+
+      & a {
+        color: $grayColor;
+        text-decoration: none;
+      }
+
       & div {
         margin-left: 10px;
       }
@@ -401,7 +410,7 @@ body {
     &-social {
       & a {
         text-decoration: none;
-        color: $grayColor;
+        color: $greenColor;
         margin-left: 5px;
 
         & i {
