@@ -381,6 +381,40 @@ body {
     }
   }
 
+  // NavBar contact area
+  .navbar-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-info {
+      padding: 10px;
+      font-size: 0.7em;
+      display: flex;
+      color: $grayColor;
+
+      & div {
+        margin-left: 10px;
+      }
+    }
+
+    &-social {
+      & a {
+        text-decoration: none;
+        color: $grayColor;
+        margin-left: 5px;
+
+        & i {
+          transition: transform 0.1s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
   // Footer
 
   footer {
