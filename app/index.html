@@ -22,6 +22,7 @@
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
+  <script src='https://www.google.com/recaptcha/api.js?render=6Lf4KIcUAAAAAJJLHVglp-0qOxL_YuNExFgZ9ath'></script>
 
 </head>
 
@@ -109,6 +110,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#our-works">Know Our Works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contactus">Contact Us</a>
         </li>
       </ul>
       <ul class="navbar-nav navbar-contact">
@@ -328,6 +332,33 @@
         </svg>
       </div>
       <div class="behance-feed"></div>
+    </div>
+    <div id="contactus" class="content-section">
+      <div class="content-section-title">Contact Us</div>
+      <div class="content-section-description text-center">
+        Convenced? Are you ready to keep in touch with us? Please fill the next form in order to contact our team.
+      </div>
+      <form id="contact-form" action="./mail/mail.php" method="post">
+        <div class="form-group">
+          <label for="emailAddress">Email address</label>
+          <input class="form-control" type="email" name="email" id="emailAddress" placeholder="Type your E-mail address..."
+            aria-describedby="emailHelp" required>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input class="form-control" type="text" name="subject" id="subject" placeholder="Describe what do you want to ask/know"
+            aria-describedby="subjectHelp" required>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" name="message" id="message" placeholder="Write here..." required></textarea>
+        </div>
+
+        <button id="contact-form-button" type="submit" value="send" class="btn btn-primary" disabled>Send</button>
+      </form>
+      <small class="form-message"></small>
     </div>
   </div>
 

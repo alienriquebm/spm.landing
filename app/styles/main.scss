@@ -424,6 +424,13 @@ body {
     }
   }
 
+  // Contact Us
+
+  #contactus {
+    background: url('../images/minibackground.jpg');
+    background-size: cover;
+  }
+
   // Footer
 
   footer {
@@ -506,6 +513,10 @@ body {
       0px 4px 5px 0px rgba(0, 0, 0, 0.14),
       0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     z-index: 1;
+  }
+
+  & .nav-link {
+    font-size: 0.9em;
   }
 
   & .navbar-light .navbar-nav .active>.nav-link,
