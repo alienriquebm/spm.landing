@@ -2,6 +2,19 @@ console.log('\'Allo \'Allo!');
 AOS.init(); // eslint-disable-line
 $(window).scroll(function execScroll() {
   const scrollValue = $(this).scrollTop();
+
+  $('.nav-item > a').each(function setActiveLink() {
+    const currLink = $(this);
+    const refElement = $(currLink.attr('href'));
+    if (refElement.position() && (refElement.position()
+      .top <= scrollValue && refElement.position().top + refElement.height() > scrollValue)) {
+      $('.nav-item > a').removeClass('active');
+      currLink.addClass('active');
+    } else {
+      currLink.removeClass('active');
+    }
+  });
+
   $('.main-logo').css('transform', `translate(0px, ${scrollValue / 2}%`);
   $('.main-clouds1, .static').css('transform', `translate(0px, -${scrollValue / 5}%`);
   $('.main-clouds2, .static').css('transform', `translate(0px, -${scrollValue / 10}%`);
@@ -19,6 +32,7 @@ $(window).scroll(function execScroll() {
   }
 });
 
+// Main carousel
 $('.carousel').carousel({
   interval: 1000 * 7,
 });
@@ -29,13 +43,12 @@ const token = '2297818537.4a9aa16.f9fa6d84db9044189add40af5cf7886e'; // learn ho
 // const userid = 'sanbricdesigns'; // User ID - get it in source HTML of your Instagram profile
 const numPhotos = 8; // how much photos do you want to get
 
-/* $.ajax({
+$.ajax({
   url: `https://api.instagram.com/v1/users/self/media/recent/?access_token=${token}`, // or /users/self/media/recent for Sandbox
   dataType: 'jsonp',
   type: 'GET',
   data: { access_token: token, count: numPhotos },
   success: (response) => {
-    console.log(response);
     const images = response.data;
     $('#loader-instagram').hide();
     for (let i = 0; i < images.length; i += 1) {
@@ -54,7 +67,6 @@ const numPhotos = 8; // how much photos do you want to get
     console.log(data); // send the error notifications to console
   },
 });
- */
 
 // Behance Access
 const apiKey = 'eo7VzCzOBa5x6OsDnWH0dqN0FkBFYuKd';
@@ -66,17 +78,20 @@ $.ajax({
   type: 'GET',
   // data: { access_token: token, count: numPhotos },
   success: (response) => {
-    console.log(response);
     const { projects } = response;
     $('#loader-behance').hide();
     for (let i = 0; i < projects.length; i += 1) {
       const project = projects[i];
       $('.behance-feed').append(`
       <div class="behance-feed-project">
-        <img src="${project.covers[404]}"></img>
+        <a href='${project.url}' target='_blank'><img src="${project.covers[404]}"></img></a>
         <div class="behance-feed-project-title text-center">
+          ${project.name}
+        </div>
         <div class="behance-feed-project-stats">
-        ${project.name}
+          <div><i class="fas fa-heart"></i><span>${project.stats.appreciations}</span></div>
+          <div><i class="fas fa-comment"></i><span>${project.stats.comments}</span></div>
+          <div><i class="fas fa-eye"></i><span>${project.stats.views}</span></div>
         </div>
       </div>
         `);
