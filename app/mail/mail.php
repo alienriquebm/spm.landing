@@ -7,6 +7,15 @@
 				$name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         $message = trim($_POST["message"]);
+        $token = $_POST["g-recaptcha-response"];
+        $secret = '6Lf4KIcUAAAAANoeHoOggryBKbCG3EQ4WR4qTXmQ';
+        // Check captcha
+        $responseCaptcha = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.secret.'&response='.token));
+
+        if(!($responseCaptcha['success'] == true && $responseCaptcha['score'] > 0.5)) {
+            http_response_code(403);
+            echo "Sorry, only humans is allowed to send us a message.";
+        }
 
         // Check that data was sent to the mailer.
         if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {

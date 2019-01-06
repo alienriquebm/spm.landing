@@ -340,15 +340,15 @@
       </div>
       <form id="contact-form" action="./mail/mail.php" method="post">
         <div class="form-group">
+          <label for="name">Name</label>
+          <input class="form-control" type="text" name="name" id="name" placeholder="Type your name..."
+            aria-describedby="nameHelp" required>
+          <small id="nameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
           <label for="emailAddress">Email address</label>
           <input class="form-control" type="email" name="email" id="emailAddress" placeholder="Type your E-mail address..."
             aria-describedby="emailHelp" required>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input class="form-control" type="text" name="subject" id="subject" placeholder="Describe what do you want to ask/know"
-            aria-describedby="subjectHelp" required>
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
@@ -358,7 +358,12 @@
 
         <button id="contact-form-button" type="submit" value="send" class="btn btn-primary" disabled>Send</button>
       </form>
-      <small class="form-message"></small>
+      <div class="alert contact-form-message alert-dismissible fade show" role="alert">
+        <small class="form-message">Thank You! Your message has been sent.</small>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     </div>
   </div>
 
