@@ -436,6 +436,13 @@ body {
     display: none;
   }
 
+  #contact-form-button {
+    background-color: $greenColor;
+    border-color: transparent;
+    &:hover {
+      background-color: darken($color: $greenColor, $amount: 10);
+    }
+  }
   // Footer
 
   footer {
