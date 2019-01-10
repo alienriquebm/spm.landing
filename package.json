@@ -11,7 +11,7 @@
     "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
-    "build": "webpack-dev-server --entry ./src/app.js --output-filename ./dist/bundle.js -d",
-    "build:prod": "webpack --entry ./src/app.js --output ./dist/bundle.js"
+    "build": "webpack-dev-server",
+    "build:prod": "webpack"
   }
 }
