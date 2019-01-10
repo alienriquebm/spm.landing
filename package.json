@@ -29,5 +29,8 @@
   "scripts": {
     "build": "webpack-dev-server",
     "build:prod": "webpack -p"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
   }
 }

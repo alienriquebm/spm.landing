@@ -1,11 +1,13 @@
+import $ from 'jquery';
+
 import './styles/app.scss';
 
-const button = document.querySelector('#test');
+const button = $('#test');
 const p = document.querySelector('#secret');
 
 let value = true;
 
-button.addEventListener('click', () => {
+button.click('click', () => {
   if (value) {
     p.classList.add('show');
     p.classList.remove('hide');
@@ -17,6 +19,8 @@ button.addEventListener('click', () => {
   }
   value = !value;
 });
+
+
 
 const doTimer = () => new Promise((resolve) => {
   setTimeout(() => {
