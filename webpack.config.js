@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: 'development',
@@ -8,13 +9,22 @@ module.exports = {
     filename: 'bundle.js', // Name of the generated js final file
     publicPath: '/dist', // To tell the web dev server where to look the bundle
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "app.css",
+    }),
+  ],
   module: {
     rules: [
       {
-        test: /\.(css|scss)$/,
+        test: /\.scss$/,
         use: [
-          'style-loader', // 3) inyect the css styles to final file
-          'css-loader', // 2) interpret import css files
+          {
+            loader: MiniCssExtractPlugin.loader,
+          }, // Creates the css final files
+          'css-loader', // 2) interpret import css files on js files
           'sass-loader', // webpack executes this 1) transform scss to css
         ],
       },
