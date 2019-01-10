@@ -1,23 +1,17 @@
 {
   "name": "spm.landing",
   "version": "1.0.0",
-  "description": "Sanbric Designs Landing Page",
-  "private": true,
+  "main": "index.js",
   "repository": "https://github.com/aebmknrl/spm.landing.git",
   "author": "Ali Briceño <alienriquebm@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "build": "webpack",
-    "build:prod": "webpack -p",
-    "start": "webpack-dev-server --open",
-    "lint": "./node_modules/.bin/eslint ./src"
-  },
   "devDependencies": {
-    "eslint": "^5.12.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "webpack": "^4.28.1",
+    "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
+  },
+  "scripts": {
+    "build": "webpack-dev-server --entry ./src/app.js --output-filename ./dist/bundle.js -d",
+    "build:prod": "webpack --entry ./src/app.js --output ./dist/bundle.js"
   }
 }
