@@ -13,10 +13,20 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
+          'style-loader', // 3) inyect the css styles to final file
+          'css-loader', // 2) interpret import css files
+          'sass-loader', // webpack executes this 1) transform scss to css
         ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
     ],
   },

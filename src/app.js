@@ -18,3 +18,19 @@ button.addEventListener('click', () => {
   value = !value;
 });
 
+const doTimer = () => new Promise((resolve) => {
+  setTimeout(() => {
+    resolve('Listo');
+  }, 10000);
+});
+
+const getTest = async () => {
+  try {
+    const timer = await doTimer();
+    console.log(timer);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getTest();
