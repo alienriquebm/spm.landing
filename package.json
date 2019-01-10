@@ -2,8 +2,16 @@
   "name": "spm.landing",
   "version": "1.0.0",
   "description": "Sanbric Designs Landing Page",
-  "main": "main.js",
+  "private": true,
   "repository": "https://github.com/aebmknrl/spm.landing.git",
   "author": "Ali Briceño <alienriquebm@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
 }
