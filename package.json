@@ -24,6 +24,6 @@
   },
   "scripts": {
     "build": "webpack-dev-server",
-    "build:prod": "webpack"
+    "build:prod": "webpack -p"
   }
 }
