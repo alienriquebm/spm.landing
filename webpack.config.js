@@ -19,6 +19,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          }, // Creates the css final files
+          'css-loader', // interpret import css files on js files
+        ],
+      },
+      {
         test: /\.scss$/,
         use: [
           {

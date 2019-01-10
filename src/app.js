@@ -1,4 +1,4 @@
-import './app.scss';
+import './styles/app.scss';
 
 const button = document.querySelector('#test');
 const p = document.querySelector('#secret');
