@@ -8,4 +8,16 @@ module.exports = {
     filename: 'bundle.js', // Name of the generated js final file
     publicPath: '/dist', // To tell the web dev server where to look the bundle
   },
+  module: {
+    rules: [
+      {
+        test: /\.(css|scss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ],
+  },
 };
