@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import './styles/app.scss';
+import '../styles/app.scss';
 
 const button = $('#test');
 const p = document.querySelector('#secret');

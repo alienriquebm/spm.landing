@@ -6,20 +6,30 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: './src/app.js',
+  entry: {
+    app: './src/js/app.js',
+    contact: './src/js/contact.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'), // Absolute path for output
-    filename: 'bundle.js', // Name of the generated js final file
+    filename: '[name].js', // Name of the generated js final file
     // publicPath: '/dist', // To tell the web dev server where to look the bundle
   },
   plugins: [
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "app.css",
+      filename: "[name].css",
     }),
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: './src/index.html',
+      excludeChunks: ['contact'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'contact.html',
+      template: './src/contact.html',
+      chunks: ['contact'],
     }),
     new CleanWebpackPlugin(['dist']),
     new webpack.ProvidePlugin({
@@ -50,9 +60,13 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [
-          'html-loader'
-        ],
+        include: path.join(__dirname, 'src/views'),
+        use: {
+          loader: 'html-loader',
+          options: {
+            interpolate: true,
+          },
+        },
       },
       {
         test: /\.(png|jpg|jepg|gif)$/,
