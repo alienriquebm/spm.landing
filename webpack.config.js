@@ -75,11 +75,23 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
-              outputPath: 'images/', // this is for copy only the file
-              publicPath: 'images/', // only for maintain the correct reference into the html file where the image is called
+              context: 'src',
             },
           },
         ],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name].[ext]',
+            },
+          },
+        ],
+        include: /node_modules/,
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
@@ -99,6 +111,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
+              context: 'src',
             },
           },
         ],
