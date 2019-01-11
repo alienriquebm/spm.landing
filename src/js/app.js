@@ -113,7 +113,7 @@ $.ajax({
 
 // ======================= reCaptcha v3 ================================
 
-const script = document.createElement('script');
+/* const script = document.createElement('script');
 script.src = 'https://www.google.com/recaptcha/api.js?render=6Lf4KIcUAAAAAJJLHVglp-0qOxL_YuNExFgZ9ath';
 document.body.appendChild(script);
 
@@ -136,8 +136,13 @@ const loadCaptcha = () => {
 }
 
 loadCaptcha();
-
-
+ */
+if (window.grecaptcha) {
+  window.grecaptcha.ready(() => { // eslint-disable-line
+    $('#contact-form-button').attr('disabled', false);
+    $('#contact-form-button').text('Send');
+  });
+}
 
 // Mail
 
