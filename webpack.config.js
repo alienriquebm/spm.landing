@@ -35,6 +35,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
+      Popper: ['popper.js', 'default'],
     })
   ],
   module: {
@@ -73,7 +74,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
+              name: '[path][name].[ext]',
               outputPath: 'images/', // this is for copy only the file
               publicPath: 'images/', // only for maintain the correct reference into the html file where the image is called
             },

@@ -8,11 +8,7 @@
 
 
 body {
-  margin: 0px;
-  padding: 0px;
-  // background: #eaf6fd;
   background: url('../images/minibackground.jpg');
-  overflow-x: hidden;
 
   & .main {
     height: 100vh;
@@ -439,10 +435,12 @@ body {
   #contact-form-button {
     background-color: $greenColor;
     border-color: transparent;
+
     &:hover {
       background-color: darken($color: $greenColor, $amount: 10);
     }
   }
+
   // Footer
 
   footer {
