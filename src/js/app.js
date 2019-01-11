@@ -11,17 +11,22 @@ AOS.init(); // eslint-disable-line
 $(window).scroll(function execScroll() {
   const scrollValue = $(this).scrollTop();
 
-  /*   $('.nav-item > a').each(function setActiveLink() {
-      const currLink = $(this);
-      const refElement = $(currLink.attr('href'));
-      if (refElement.position() && (refElement.position()
-        .top <= scrollValue && refElement.position().top + refElement.height() > scrollValue)) {
-        $('.nav-item > a').removeClass('active');
-        currLink.addClass('active');
-      } else {
-        currLink.removeClass('active');
-      }
-    }); */
+  $('.nav-item > a').each(function setActiveLink() {
+    const currLink = $(this);
+    let refElement;
+    if (currLink.attr('href') === '#') {
+      refElement = $('.main');
+    } else {
+      refElement = $(currLink.attr('href'));
+    }
+    if (refElement.position() && (refElement.position()
+      .top <= scrollValue && refElement.position().top + (refElement.outerHeight()) > scrollValue)) {
+      $('.nav-item > a').removeClass('active');
+      currLink.addClass('active');
+    } else {
+      currLink.removeClass('active');
+    }
+  });
 
   $('.main-logo').css('transform', `translate(0px, ${scrollValue / 2}%`);
   $('.main-clouds1, .static').css('transform', `translate(0px, -${scrollValue / 5}%`);
