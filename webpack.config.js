@@ -60,7 +60,6 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        include: path.join(__dirname, 'src/views'),
         use: {
           loader: 'html-loader',
           options: {
@@ -69,7 +68,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|jepg|gif)$/,
+        test: /\.(png|jpg|jepg|gif|svg)$/,
         use: [
           {
             loader: 'file-loader',
