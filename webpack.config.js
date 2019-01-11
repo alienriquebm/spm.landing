@@ -82,6 +82,28 @@ module.exports = {
         ],
       },
       {
+        test: /\.(ttf|woff|woff2|eot)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: './fonts/[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.php$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+            },
+          },
+        ],
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {

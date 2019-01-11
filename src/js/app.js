@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import 'bootstrap';
 import AOS from 'aos';
+import '../php/mail.php';
 
 import '../styles/app.scss';
 
@@ -109,16 +110,32 @@ $.ajax({
   },
 });
 
-const script = document.createElement('script')
 
-script.src = `https://www.google.com/recaptcha/api.js?render=6Lf4KIcUAAAAAJJLHVglp-0qOxL_YuNExFgZ9ath`
+// ======================= reCaptcha v3 ================================
 
-document.body.appendChild(script)
-setTimeout(() => {
-  window.grecaptcha.ready(() => { // eslint-disable-line
-    $('#contact-form-button').attr('disabled', false);
-  });
-}, 100)
+const script = document.createElement('script');
+script.src = 'https://www.google.com/recaptcha/api.js?render=6Lf4KIcUAAAAAJJLHVglp-0qOxL_YuNExFgZ9ath';
+document.body.appendChild(script);
+
+let timeout = 100; // 10 seconds timeout
+
+const loadCaptcha = () => {
+  setTimeout(() => {
+    timeout -= 1;
+    if (window.grecaptcha) {
+      window.grecaptcha.ready(() => { // eslint-disable-line
+        $('#contact-form-button').attr('disabled', false);
+        $('#contact-form-button').text('Send');
+      });
+    } else if (timeout > 0) {
+      loadCaptcha();
+    } else {
+      $('#contact-form-button').text('Failed to load captcha =( check your connection.');
+    }
+  }, 1000);
+}
+
+loadCaptcha();
 
 
 
