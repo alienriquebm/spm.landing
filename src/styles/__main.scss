@@ -14,4 +14,28 @@ body {
   padding: 0px;
   // background: #eaf6fd;
   overflow-x: hidden;
+
+  // Overrides of Bootstrap
+  .carousel-item {
+    text-align: center;
+  }
+
+  & .navbar {
+    width: 100%;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    z-index: 1;
+  }
+
+  & .nav-link {
+    font-size: 0.8em;
+  }
+
+  & .navbar-light .navbar-nav .active>.nav-link,
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link.show,
+  .navbar-light .navbar-nav .show>.nav-link {
+    color: $greenColor;
+  }
 }
