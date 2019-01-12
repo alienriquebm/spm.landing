@@ -12,14 +12,14 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'), // Absolute path for output
-    filename: '[name].js', // Name of the generated js final file
+    filename: 'js/[name].js', // Name of the generated js final file
     // publicPath: '/dist', // To tell the web dev server where to look the bundle
   },
   plugins: [
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "[name].css",
+      filename: "css/[name].css",
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -76,6 +76,7 @@ module.exports = {
             options: {
               name: '[path][name].[ext]',
               context: 'src',
+              publicPath: '/',
             },
           },
         ],
@@ -99,7 +100,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: './fonts/[name].[ext]',
+              name: 'fonts/[name].[ext]',
+              publicPath: '/'
             },
           },
         ],
