@@ -1,4 +1,5 @@
 <img src="http://sanbricdesigns.com.ve/images/logo.png" alt="Sanbric Designs" width="200">
+
 # Sanbric Designs Landing Page
 
 Sanbric Designs Landing Page (SDLP) is part of the new image of the Company "Sanbric Designs, C.A." which is from Caracas, Venezuela.
