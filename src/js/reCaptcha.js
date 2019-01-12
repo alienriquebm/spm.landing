@@ -1,3 +1,6 @@
+// Libraries
+import $ from 'jquery';
+
 if (window.grecaptcha) {
   window.grecaptcha.ready(() => { // eslint-disable-line
     $('#contact-form-button').attr('disabled', false);

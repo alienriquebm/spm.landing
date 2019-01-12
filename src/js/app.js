@@ -16,7 +16,8 @@ import '../favicon.ico';
 // Styles
 import '../styles/app.scss';
 
-window.$ = window.jQuery = $;
+window.$ = window.jQuery;
+window.$ = $;
 
 AOS.init(); // eslint-disable-line
 $(window).scroll(function execScroll() {
@@ -31,7 +32,8 @@ $(window).scroll(function execScroll() {
       refElement = $(currLink.attr('href'));
     }
     if (refElement.position() && (refElement.position()
-      .top <= scrollValue && refElement.position().top + (refElement.outerHeight()) > scrollValue)) {
+      .top <= scrollValue && refElement.position().top
+      + (refElement.outerHeight()) > scrollValue)) {
       $('.nav-item > a').removeClass('active');
       currLink.addClass('active');
     } else {

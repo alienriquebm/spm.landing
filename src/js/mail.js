@@ -1,3 +1,6 @@
+// Libraries
+import $ from 'jquery';
+
 // Mail
 
 $(() => {
@@ -26,14 +29,14 @@ $(() => {
           url: $(form).attr('action'),
           data: formData,
         })
-          .done((response) => {
+          .done((res) => {
             // Make sure that the formMessages div has the 'success' class.
             $(formMessages).removeClass('error');
             $(formMessages).addClass('success');
 
             // Set the message text.
             $('.contact-form-message').addClass('alert-success').show();
-            $(formMessages).text(response);
+            $(formMessages).text(res);
 
             // Clear the form.
             $('#contact-form input,#contact-form textarea').val('');
@@ -54,6 +57,5 @@ $(() => {
             }
           });
       });
-
   });
 });

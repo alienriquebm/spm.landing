@@ -1,3 +1,6 @@
+// Libraries
+import $ from 'jquery';
+
 // Behance Access
 const apiKey = 'eo7VzCzOBa5x6OsDnWH0dqN0FkBFYuKd';
 const collection = '170537937';

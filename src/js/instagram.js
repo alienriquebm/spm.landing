@@ -1,3 +1,6 @@
+// Libraries
+import $ from 'jquery';
+
 // Instagram Access
 
 const token = '2297818537.4a9aa16.f9fa6d84db9044189add40af5cf7886e'; // learn how to obtain it below

@@ -1,5 +1,5 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
@@ -19,7 +19,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "css/[name].css",
+      filename: 'css/[name].css',
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -36,7 +36,7 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
       Popper: ['popper.js', 'default'],
-    })
+    }),
   ],
   module: {
     rules: [
@@ -101,7 +101,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: 'fonts/[name].[ext]',
-              publicPath: '/'
+              publicPath: '/',
             },
           },
         ],
