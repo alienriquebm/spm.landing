@@ -9,8 +9,9 @@ import './behance';
 import './mail';
 import './reCaptcha';
 
-// PHP Files
+// Other Files
 import '../php/mail.php';
+import '../favicon.ico';
 
 // Styles
 import '../styles/app.scss';
