@@ -19,6 +19,14 @@ body {
       text-align: center;
       top: 30px;
       color: #8b8783;
+
+      & h2 {
+        @media screen and (max-width: $break-small) {
+
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
     }
 
     &-logo {
@@ -28,9 +36,17 @@ body {
       z-index: -1;
       transition: transform 0.1s ease;
 
+      @media screen and (max-width: $break-small) {
+        top: calc((100vh / 2) - 145px);
+      }
+
       & img {
         width: 400px;
         object-fit: contain;
+      }
+
+      @media screen and (max-width: $break-small) {
+        padding: 30px;
       }
     }
 
@@ -41,6 +57,10 @@ body {
       transition: transform 0.5s ease;
       opacity: 0.5;
       animation: moveClouds 70s linear infinite;
+
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
 
       img {
         width: 300px;
@@ -60,6 +80,10 @@ body {
       opacity: 0.5;
       animation: moveClouds 100s linear infinite;
       overflow: hidden;
+
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
 
       img {
         width: 300px;
@@ -81,6 +105,10 @@ body {
       opacity: 0.5;
       animation: moveClouds 160s linear infinite;
 
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
+
       img {
         width: 300px;
       }
@@ -99,9 +127,17 @@ body {
       transition: transform 0.5s ease;
       opacity: 0.5;
       animation: moveClouds 160s linear infinite;
+
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
     }
 
     .cloud-static {
+      @media screen and (max-width: $break-small) {
+        display: none;
+      }
+
       animation: none !important;
     }
 
@@ -157,6 +193,10 @@ body {
       &-description {
         color: $grayColor;
       }
+
+      @media screen and (max-width: $break-small) {
+        padding: 20px;
+      }
     }
   }
 
@@ -183,6 +223,10 @@ body {
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 50px;
 
+      @media screen and (max-width: $break-small) {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      }
+
       &-service {
         padding: 20px;
         border: 1px solid $grayColor;
@@ -196,6 +240,10 @@ body {
         grid-template-rows: 70px 1fr 90px;
         border-bottom: 4px solid #b7d439;
         cursor: default;
+
+        @media screen and (max-width: $break-small) {
+          grid-template-rows: 70px 1fr auto;
+        }
 
         &-title {
           text-align: center;
@@ -224,6 +272,11 @@ body {
         }
       }
     }
+
+    @media screen and (max-width: $break-small) {
+      padding: 20px;
+      padding-bottom: 80px;
+    }
   }
 
   // Instagram
@@ -247,6 +300,11 @@ body {
         background-color: #8baa47 !important;
       }
     }
+
+    @media screen and (max-width: $break-small) {
+      padding-top: 50px;
+      padding-bottom: 80px;
+    }
   }
 
   .instagram-feed {
@@ -256,6 +314,11 @@ body {
     align-content: center;
     grid-template-columns: repeat(4, 100px);
     grid-gap: 15px;
+
+    @media screen and (max-width: $break-small) {
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      width: 100%;
+    }
 
     & img {
       width: 100%;
@@ -277,6 +340,10 @@ body {
     align-items: center;
     flex-direction: column;
 
+    @media screen and (max-width: $break-small) {
+      padding-top: 60px;
+    }
+
     & .behance-feed {
       padding-top: 20px;
       display: grid;
@@ -285,6 +352,10 @@ body {
       grid-template-columns: repeat(auto-fit, 200px);
       grid-gap: 15px;
       width: 100%;
+
+      @media screen and (max-width: $break-small) {
+        grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+      }
 
       &-project {
         background: white;
@@ -465,6 +536,11 @@ body {
         align-items: center;
         width: 100%;
         padding-bottom: 10px;
+
+        @media screen and (max-width: $break-small) {
+          grid-template-columns: 1fr;
+          grid-gap: 10px;
+        }
 
         &-social {
           & a {
