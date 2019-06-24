@@ -27,6 +27,7 @@ $(() => {
 
     // Lock the form
     $('#contact-form :input').attr('disabled', true);
+    $('#contact-form-button').text('Sending...');
     $('#contact-form :button').attr('disabled', true);
 
     grecaptcha.execute(process.env.RECAPTCHA_SECRET, { action: 'contactus' }) // eslint-disable-line
@@ -56,6 +57,7 @@ $(() => {
             });
             $('#contact-form :input').attr('disabled', false);
             $('#contact-form :button').attr('disabled', false);
+            $('#contact-form-button').text('Send');
           })
           .fail((data) => {
             console.log('data', data);
@@ -79,6 +81,7 @@ $(() => {
             }
             $('#contact-form :input').attr('disabled', false);
             $('#contact-form :button').attr('disabled', false);
+            $('#contact-form-button').text('Send');
           });
       });
   });

@@ -1,5 +1,6 @@
 <?php
-
+// THIS CODE IS ONLY LEFT FOR TEST PURSPOSES. THIS PHP FILE IS NOT WORKING ON THIS SITE 
+// THE SITE IS CODED TO WORK WITH NODEJS AND SMP.API PROJECT
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.

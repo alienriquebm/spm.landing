@@ -46,14 +46,18 @@ $(window).scroll(function execScroll() {
   $('.main-clouds2, .static').css('transform', `translate(0px, -${scrollValue / 10}%`);
   $('.main-clouds3, .static').css('transform', `translate(0px, -${scrollValue / 12}%`);
   if (scrollValue >= window.innerHeight) {
+    $('.navbar').css('visibility', 'visible');
     $('.navbar').css('position', 'fixed');
     $('.navbar').css('top', 0);
-    $('.navbar').show(100);
+    $('.navbar').show();
     $('.main-logo').hide();
+    $('.fake-navbar').hide();
   } else {
+    $('.navbar').css('visibility', 'hidden');
     $('.navbar').css('position', 'initial');
     $('.navbar').css('top', 'initial');
-    $('.navbar').hide(100);
+    $('.navbar').hide();
+    $('.fake-navbar').show();
     $('.main-logo').show();
   }
 });
