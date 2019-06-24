@@ -238,7 +238,8 @@
         <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;"
           xml:space="preserve">
-          <path fill="#000" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+          <path fill="#000"
+            d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
             <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25"
               dur="0.6s" repeatCount="indefinite" />
           </path>
@@ -246,7 +247,8 @@
       </div>
       <div class="instagram-feed">
       </div>
-      <button type="button" class="btn btn-primary" onclick=" window.open('http://instagram.com/sanbricdesigns','_blank')">
+      <button type="button" class="btn btn-primary"
+        onclick=" window.open('http://instagram.com/sanbricdesigns','_blank')">
         Follow Us
       </button>
     </div>
@@ -260,7 +262,8 @@
         <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;"
           xml:space="preserve">
-          <path fill="#000" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+          <path fill="#000"
+            d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
             <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25"
               dur="0.6s" repeatCount="indefinite" />
           </path>
@@ -273,7 +276,7 @@
       <div class="content-section-description text-center">
         Convenced? Are you ready to keep in touch with us? Please fill the next form in order to contact our team.
       </div>
-      <form id="contact-form" action="./php/mail.php" method="post">
+      <form id="contact-form" action="" method="post">
         <div class="form-group">
           <label for="name">Name</label>
           <input class="form-control" type="text" name="name" id="name" placeholder="Type your name..."
@@ -281,8 +284,8 @@
         </div>
         <div class="form-group">
           <label for="emailAddress">Email address</label>
-          <input class="form-control" type="email" name="email" id="emailAddress" placeholder="Type your E-mail address..."
-            aria-describedby="emailHelp" required>
+          <input class="form-control" type="email" name="email" id="emailAddress"
+            placeholder="Type your E-mail address..." aria-describedby="emailHelp" required>
         </div>
         <div class="form-group">
           <label for="message">Message</label>
@@ -292,12 +295,12 @@
         <button id="contact-form-button" type="submit" value="send" class="btn btn-primary" disabled>Loading
           reCaptcha...</button>
       </form>
-      <div class="alert contact-form-message alert-dismissible fade show" role="alert">
+      <!--       <div class="alert contact-form-message alert-dismissible fade show" role="alert">
         <small class="form-message">Thank You! Your message has been sent.</small>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
   ${require('./views/footer.html')}

@@ -1,14 +1,10 @@
 // Libraries
 import $ from 'jquery';
-
-// Mail
+import 'jquery-toast-plugin';
 
 $(() => {
   // Get the form.
   const form = $('#contact-form');
-
-  // Get the messages div.
-  const formMessages = $('.form-message');
 
   // Set up an event listener for the contact form.
   $(form).submit((e) => {
@@ -16,45 +12,73 @@ $(() => {
     e.preventDefault();
 
     // Serialize the form data.
-    let formData = $(form).serialize();
+    let formData = $(form).serializeArray();
 
+    // Serialize data function
+    function objectifyForm(formArray) {
+      const returnArray = {};
+      for (let i = 0; i < formArray.length; i += 1) {
+        returnArray[formArray[i].name] = formArray[i].value;
+      }
+      return returnArray;
+    }
 
-    grecaptcha.execute('6Lf4KIcUAAAAAJJLHVglp-0qOxL_YuNExFgZ9ath', { action: 'contactus' }) // eslint-disable-line
+    const formDataParsed = objectifyForm(formData);
+
+    // Lock the form
+    $('#contact-form :input').attr('disabled', true);
+    $('#contact-form :button').attr('disabled', true);
+
+    grecaptcha.execute(process.env.RECAPTCHA_SECRET, { action: 'contactus' }) // eslint-disable-line
       .then((response) => {
         const token = response;
         formData = `${formData}&g-recaptcha-response=${token}`;
         // Submit the form using AJAX.
         $.ajax({
           type: 'POST',
-          url: $(form).attr('action'),
-          data: formData,
+          url: `${process.env.API_URL}/contactus`,
+          data: {
+            data: formDataParsed,
+            recaptcha: token,
+          },
         })
           .done((res) => {
-            // Make sure that the formMessages div has the 'success' class.
-            $(formMessages).removeClass('error');
-            $(formMessages).addClass('success');
-
-            // Set the message text.
-            $('.contact-form-message').addClass('alert-success').show();
-            $(formMessages).text(res);
-
             // Clear the form.
             $('#contact-form input,#contact-form textarea').val('');
+            $.toast({
+              heading: 'Success!',
+              text: res,
+              position: 'top-right',
+              bgColor: '#8b8783',
+              textColor: 'white',
+              stack: false,
+              icon: 'info',
+            });
+            $('#contact-form :input').attr('disabled', false);
+            $('#contact-form :button').attr('disabled', false);
           })
           .fail((data) => {
             console.log('data', data);
-            // Make sure that the formMessages div has the 'error' class.
-            $(formMessages).removeClass('success');
-            $(formMessages).addClass('error');
-
             // Set the message text.
             if (data.responseText !== '') {
-              $('.contact-form-message').addClass('alert-danger').show();
-              $(formMessages).text(data.responseText);
+              $.toast({
+                heading: 'Error',
+                text: data.responseText,
+                position: 'top-right',
+                stack: false,
+                icon: 'error',
+              });
             } else {
-              $('.contact-form-message').addClass('alert-danger').show();
-              $(formMessages).text('Oops! An error occured and your message could not be sent.');
+              $.toast({
+                heading: 'Error',
+                text: 'Oops! An error occured and your message could not be sent.',
+                position: 'top-right',
+                stack: false,
+                icon: 'error',
+              });
             }
+            $('#contact-form :input').attr('disabled', false);
+            $('#contact-form :button').attr('disabled', false);
           });
       });
   });
