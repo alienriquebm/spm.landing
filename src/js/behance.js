@@ -6,7 +6,7 @@ const apiKey = 'eo7VzCzOBa5x6OsDnWH0dqN0FkBFYuKd';
 const collection = '170537937';
 
 $.ajax({
-  url: `http://behance.net/v2/collections/${collection}/projects?api_key=${apiKey}`, // or /users/self/media/recent for Sandbox
+  url: `https://behance.net/v2/collections/${collection}/projects?api_key=${apiKey}`, // or /users/self/media/recent for Sandbox
   dataType: 'jsonp',
   type: 'GET',
   // data: { access_token: token, count: numPhotos },
